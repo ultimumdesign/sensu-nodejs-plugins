@@ -1,0 +1,72 @@
+{
+  "name": "sensu-nodejs-plugins",
+  "version": "1.0.0",
+  "description": "sensu plugins written in node",
+  "main": "./sensu-nodejs-plugins",
+  "bin": "./sensu-nodejs-plugins/cli.js",
+  "scripts": {
+    "resolve": "npx npm-force-resolutions",
+    "release": "semantic-release",
+    "test": "nyc mocha ./test",
+    "task": "node ./tasksfile",
+    "build": "npx task build",
+    "doc": "npx task doc",
+    "lint": "standard",
+    "cmd": "node ./create-ecm-app/cli.js"
+  },
+  "author": "ECM",
+  "license": "ISC",
+  "pkg": {
+    "scripts": "sensu-nodejs-plugins/*.js"
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "master"
+      },
+      {
+        "name": "*",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "message": "bump: version ${lastRelease.version} → ${nextRelease.version}"
+        }
+      ]
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "/docs/*"
+    ]
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "chai": "^4.2.0",
+    "commitizen": "^4.1.2",
+    "dotenv": "^8.2.0",
+    "jsdoc": "^3.6.3",
+    "jsdoc-fresh": "^1.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "semantic-release": "^17.0.7",
+    "standard": "^14.3.4",
+    "tasksfile": "^5.1.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.695.0"
+  }
+}
