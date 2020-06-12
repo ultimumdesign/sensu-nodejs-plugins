@@ -1,6 +1,6 @@
 {
   "name": "sensu-nodejs-plugins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sensu plugins written in node",
   "main": "./sensu-nodejs-plugins",
   "bin": "./sensu-nodejs-plugins/cli.js",
