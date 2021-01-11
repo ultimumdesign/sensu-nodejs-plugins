@@ -1,0 +1,1 @@
+b6c0b7bbaad9571924bd44ddb25d8896c8dec9b1f65fa7fa54076302ba526597c60cd6980a6ca395eed4105ae1a5636c9b999e016f3e27c9f8151663b5fbca3a sensu-nodejs-plugins-alpine.tar.gz
