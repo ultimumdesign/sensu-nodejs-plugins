@@ -8,3 +8,4 @@ builds:
     filter:
       - "entity.system.os == 'linux'"
       - "entity.system.arch == 'amd64'"
+      - "entity.system.platform == 'alpine'"
